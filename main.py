@@ -1,10 +1,3 @@
-from subprocess import *
-pckg_inst=int(input('Install needed packages?\n1. Yes\n2. No\n>> '))
-while pckg_inst not in [1,2]:
-    print('❌ Invalid selection! Choose 1 or 2 for package installation')
-    pckg_inst=int(input('Install needed packages?\n1. Yes\n2. No\n>> '))
-if pckg_inst==1:print('Installing packages...'),run('pip install optimum[quanto], huggingface_hub, transformers')
-elif pckg_inst==2:print('Okay, skipping package installation...')
 from huggingface_hub import login
 from optimum.quanto import *
 from transformers import *
