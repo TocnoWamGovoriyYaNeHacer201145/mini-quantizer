@@ -23,6 +23,6 @@ while exclude_type!=1:
 if exclude_type==1:exclude_type='lm_head'
 save_path=input('Enter model save folder path (example: ./my_quantized_model)\n>> ')
 model=AutoModelForCausalLM.from_pretrained(d)
-qmodel=QuantizedModelForCausalLM.quantize(model,weights=weights_type,exclude=exclude_type)
+qmodel=QuantizedModelForCausalLM.quantize(model,weights=weights_type,exclude=[exclude_type])
 qmodel.save_pretrained(save_path)
 print(f'Quantized model successfully saved in {save_path}')
